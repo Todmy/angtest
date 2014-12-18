@@ -13,5 +13,4 @@ myApp.directive("flash", function(){
             alert("I'm a fast man!");
         }
     }
-
 });
