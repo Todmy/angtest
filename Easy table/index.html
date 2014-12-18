@@ -10,9 +10,9 @@
 <div ng-controller="AvangersCtrl">
     <input ng-model="search">
     <table>
-        <tr ng-repeat="actor in avangers.cast | filter:search">
-            <td>{{actor.name}}</td>
-            <td>{{actor.character}}</td>
+        <tr ng-repeat="actor in avangers.cast | orderBy:'name' | limitTo:5 | filter:search">
+            <td>{{actor.name | lowercase}}</td>
+            <td>{{actor.character | uppercase}}</td>
         </tr>
     </table>
 </div>
