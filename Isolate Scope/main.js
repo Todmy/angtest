@@ -1,9 +1,16 @@
 var superApp = angular.module("app", []);
-superApp.controller("ChoreController", function($scope){
-   $scope.logChore = function (chore) {
-       alert(chore + " is done");
-   }
-});
+
+function ChoreController() {
+}
+
+ChoreController.prototype.log = function (chore) {
+    alert(chore + " is done");
+};
+
+superApp.controller("ChoreController", ChoreController);
+
+
+
 superApp.directive("kid", function(){
     return {
         restrict: "E",
@@ -12,6 +19,6 @@ superApp.directive("kid", function(){
         },
         template: '<input type="text" ng-model="chore"><br>' +
         '{{chore}}<br>' +
-        '<div class="button" ng-click="done({chore: chore})">done</div>'
+        '<div class="button" ng-click="done({ chore: chore })">done</div>'
     }
 });

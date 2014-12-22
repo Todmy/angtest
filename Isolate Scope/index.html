@@ -14,8 +14,11 @@
     </style>
 </head>
 <body ng-app="app">
-<div ng-controller="ChoreController">
-    <kid done="logChore(chore)"></kid>
+
+    <div ng-controller="ChoreController as choreCtrl">
+        <kid done="choreCtrl.log(chore)"></kid>
+    </div>
+
 </div>
 
 </body>
