@@ -1,6 +1,6 @@
 var myApp = angular.module("app", []);
 
-myApp.controller("MyController", MyClock);
+myApp.controller("MyControllerParse", MyClock);
 
 function MyClock($timeout) {
     this.updateClock($timeout);
