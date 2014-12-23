@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-app="app">
+<div ng-controller="MyController">
+    <input ng-model="someText" type="text" placeholder="Enter some text"/>
+    <h2>{{ someText }}</h2>
+    <h2>{{ someText | uppercase }}</h2>
+    <h2>{{ someText | lowercase }}</h2>
+
+    <input ng-model="someNumber" type="number" placeholder="Enter some number"/>
+    <h2>{{ someNumber | currency }}</h2>
+    <h2>{{ someNumber | number:3 }}</h2>
+
+    <input ng-model="today" type="date" placeholder="Enter some data"/>
+    <h3>{{ today | date:'medium' }}</h3> <!-- Aug 09, 2013 12:09:02 PM -->
+    <h3>{{ today | date:'short' }}</h3> <!-- 8/9/13 12:09 PM -->
+    <h3>{{ today | date:'fullDate' }}</h3> <!-- Thursday, August 09, 2013 -->
+    <h3>{{ today | date:'longDate' }}</h3> <!-- August 09, 2013 -->
+    <h3>{{ today | date:'mediumDate' }}</h3> <!-- Aug 09, 2013 -->
+    <h3>{{ today | date:'shortDate' }}</h3> <!-- 8/9/13 -->
+    <h3>{{ today | date:'mediumTime' }}</h3> <!-- 12:09:02 PM -->
+    <h3>{{ today | date:'shortTime' }}</h3> <!-- 12:09 PM -->
+
+    <div>custom date formatting</div>
+    <h3>{{ today | date:'MMM d, y' }}</h3> <!-- Aug 9, 2013 -->
+    <h3>{{ today | date:'EEEE, d, M' }}</h3> <!-- Thursday, 9, 8 -->
+    <h3>{{ today | date:'hh:mm:ss.sss' }}</h3> <!-- 12:09:02.995 -->
+</div>
+</body>
+</html>
