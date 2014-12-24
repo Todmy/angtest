@@ -40,7 +40,7 @@
                     <input type="text" placeholder="Name" name="name" ng-model="signup.name" ng-minlength=3
                            ng-maxlength=20 ng-pattern="/^[a-zA-Z]*$/" required>
 
-                    <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                    <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid && signup_form.submitted">
                         <small class="error" ng-show="signup_form.name.$error.required"> Your name is required</small>
                         <small class="error" ng-show="signup_form.name.$error.minlength"> Your name is required to be at
                             least 3 characters
@@ -60,7 +60,7 @@
                     <input type="email" placeholder="Email" name="email" ng-model="signup.email" ng-minlength=3
                            ng-maxlength=20 required>
 
-                    <div class="error" ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+                    <div class="error" ng-show="signup_form.email.$dirty && signup_form.email.$invalid && signup_form.submitted">
                         <small class="error" ng-show="signup_form.email.$error.required"> Your email is required</small>
                         <small class="error" ng-show="signup_form.email.$error.minlength"> Your email is required to be at least 3 characters
                         </small>

@@ -1,6 +1,14 @@
 var myApp = angular.module('app', []);
 myApp.controller('MyController', MyController);
 function MyController($scope) {
+    $scope.submitted = false;
+    $scope.signupForm = function () {
+        if ($scope.signup_form.$valid) {
+            // submit as normal
+        } else {
+            $scope.signup_form.submitted = true;
+        }
+    }
 }
 myApp.directive('ensureUnique', function ($http) {
     return {
