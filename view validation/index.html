@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+    <style>
+        body {
+            background-color: #fff;
+            border-top: 5px solid #3399cc;
+        }
+
+        html {
+            background: #fff;
+        }
+
+        .row {
+            border: 0px solid green;
+        }
+
+        input.ng-invalid {
+            border: 1px solid red;
+        }
+
+        input.ng-valid {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body ng-app="app">
+<div ng-controller="MyController as ctrl">
+    <form name="signup_form" novalidate ng-submit="signupForm()">
+        <fildset>
+            <legend>Signup</legend>
+            <div class="row">
+                <div class="large-12 collumns">
+                    <label>Your name</label>
+                    <input type="text" placeholder="Name" name="name" ng-model="signup.name" ng-minlength=3
+                           ng-maxlength=20 ng-pattern="/^[a-zA-Z]*$/" required>
+                    <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                        <small class="error" ng-show="signup_form.name.$error.required"> Your name is required</small>
+                        <small class="error" ng-show="signup_form.name.$error.minlength"> Your name is required to be at least 3 characters</small>
+                        <small class="error" ng-show="signup_form.name.$error.maxlength"> Your name cannot be longer than 20 characters</small>
+                        <small class="error" ng-show="signup_form.name.$error.pattern"> Your name must contain only english letters</small>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="button rarius">Submit</button>
+        </fildset>
+    </form>
+</div>
+</body>
+</html>
