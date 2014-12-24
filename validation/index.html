@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-app="app">
+<style>
+    input.ng-invalid, input.ng-pristine {
+        border: 1px solid red;
+    }
+</style>
+<div ng-controller="MyController as ctrl">
+    <form name="form" novalidate>
+        <label name="email">Your email</label>
+        <!--<input type="email" name="email" ng-model="email" placeholder="Email Address" ng-minlength=5 ng-maxlength=20-->
+               <!--ng-pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"/>-->
+        <input type="email" name="email" ng-model="user.email" placeholder="Email Address" ng-pattern="/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" />
+        <button ng-click="isValid()">is valid?</button>
+    </form>
+</div>
+</body>
+</html>
