@@ -31,6 +31,10 @@
     <h3>{{ today | date:'MMM d, y' }}</h3> <!-- Aug 9, 2013 -->
     <h3>{{ today | date:'EEEE, d, M' }}</h3> <!-- Thursday, 9, 8 -->
     <h3>{{ today | date:'hh:mm:ss.sss' }}</h3> <!-- 12:09:02.995 -->
+    <hr />
+    <h1>My own filter</h1>
+    <input ng-model="xxx" type="text" placeholder="Enter something"/>
+    <h2>{{ xxx | customFilter }}</h2>
 </div>
 </body>
 </html>
